@@ -1,0 +1,8 @@
+leetcode 373 查找和最小的 K 对数字
+https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/
+对priority_queue< pair<int,int> > pq; 的排序
+        auto cmp = [&nums1, &nums2](const pair<int, int> & a, const pair<int, int> & b) {
+            return nums1[a.first] + nums2[a.second] > nums1[b.first] + nums2[b.second];  //最小的在顶部，换成“<”后最大的在顶部
+        };
+后续写做
+priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
