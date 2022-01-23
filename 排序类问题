@@ -6,3 +6,18 @@ https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/
         };
 后续写做
 priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
+
+
+https://leetcode-cn.com/problems/k-highest-ranked-items-within-a-price-range/submissions/
+价格范围内最高排名的 K 样物品
+利用结构体排序
+    struct node{
+        int dis,row,column,price;
+        bool operator < (node &b) {
+            if(dis!=b.dis) return dis<b.dis;
+            if(price!=b.price) return price<b.price;
+            if(row!=b.row) return row<b.row;
+            return column<b.column;
+        }
+    };
+在类定义运算符时自带一个
