@@ -1,3 +1,5 @@
 //大小写
 s[i]=tolower(s[i));
 s[i]=toupper(s[i]);
+//是否为字母
+isalpha(s[i]);
