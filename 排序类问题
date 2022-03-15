@@ -21,3 +21,19 @@ https://leetcode-cn.com/problems/k-highest-ranked-items-within-a-price-range/sub
         }
     };
 在类定义运算符时自带一个
+
+leetcode 432. 全 O(1) 的数据结构
+插入元素为结构体时重载运算符
+    typedef struct st{
+        string s;
+        int cnt;
+        /*bool operator < (st &b) {
+            return cnt < b.cnt ; 
+        }*/
+        friend bool operator<(const st &a, const st &b) {
+            if(a.cnt == b.cnt) {
+                return a.s < b.s;
+            }
+            return a.cnt < b.cnt;
+        }
+    }st;
