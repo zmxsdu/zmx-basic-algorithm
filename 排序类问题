@@ -9,7 +9,7 @@ priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
 
 
 https://leetcode-cn.com/problems/k-highest-ranked-items-within-a-price-range/submissions/
-价格范围内最高排名的 K 样物品
+2146. 价格范围内最高排名的 K 样物品
 利用结构体排序
     struct node{
         int dis,row,column,price;
@@ -20,9 +20,12 @@ https://leetcode-cn.com/problems/k-highest-ranked-items-within-a-price-range/sub
             return column<b.column;
         }
     };
+    vector<node> a;
+    sort(a.begin(),a.end());
 在类定义运算符时自带一个
 
 leetcode 432. 全 O(1) 的数据结构
+https://leetcode-cn.com/problems/all-oone-data-structure/
 插入元素为结构体时重载运算符
     typedef struct st{
         string s;
@@ -37,3 +40,16 @@ leetcode 432. 全 O(1) 的数据结构
             return a.cnt < b.cnt;
         }
     }st;
+    
+    leetcode 2213. 由单个字符重复的最长子字符串  
+    单点修改整合新区间
+    https://leetcode-cn.com/problems/longest-substring-of-one-repeating-character/
+    对set <pii> 二分
+    //ms记录长度，sp记录区间起始点
+    multiset<int> ms,set<pair<int, int>> sp;
+    //寻找首元素小于等于p的最大元素
+    auto pr = *prev(sp.upper_bound(make_pair(p, n)));（（p,n）一定大于（p,未知），固向前一个即找到）
+    auto 找到的pr是一个具体元素（因为加了*）
+    //删除单一长度
+     ms.erase(ms.find(pr.second-pr.first+1));
+     如果不find一下，会删除全部同样大小的元素
