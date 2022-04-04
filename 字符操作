@@ -3,3 +3,7 @@ s[i]=tolower(s[i));
 s[i]=toupper(s[i]);
 //是否为字母
 isalpha(s[i]);
+//
+stoi(s.substr(pos,len));
+pos起始位置，len长度
+不加len代表一直到字符串末尾
