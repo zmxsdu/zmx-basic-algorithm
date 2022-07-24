@@ -1,0 +1,24 @@
+///拓扑排序
+class Solution {
+private:
+    vector<vector<int>> edges;
+    vector<int> visited;
+    bool valid = true;
+
+public:
+    void dfs(int u) {
+        visited[u] = 1;
+        for (int v: edges[u]) {
+            if (visited[v] == 0) {
+                dfs(v);
+                if (!valid) {
+                    return;
+                }
+            }
+            else if (visited[v] == 1) {
+                valid = false;
+                return;
+            }
+        }
+        visited[u] = 2;
+    }
