@@ -7,3 +7,5 @@ isalpha(s[i]);
 stoi(s.substr(pos,len));
 pos起始位置，len长度
 不加len代表一直到字符串末尾
+//LC 899
+同构字符串的最小字典序存在O（n）求法，叫最小表示法
