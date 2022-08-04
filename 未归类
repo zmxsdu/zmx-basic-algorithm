@@ -3,3 +3,12 @@ __builtin_popcount()
 //
 bitset<1000> a[1010];
 1010行1000列的位图
+
+
+set
+对set的访问
+		for(set<long long>::iterator it = s.begin(); it!=s.end();it++){
+            res.push_back((*it));
+		}
+    查找
+    s.find(x)==s.end()
