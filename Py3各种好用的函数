@@ -1,1 +1,3 @@
-
+字符串：
+sentence[start:end].startswith(searchWord):
+startwith函数
