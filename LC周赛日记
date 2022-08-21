@@ -1,0 +1,12 @@
+8.21
+第四题：https://leetcode.cn/problems/find-the-k-sum-of-an-array/
+第k小序列，可以用堆递归地实现
+        priority_queue<pair<long long,int>> pq;
+        pq.emplace(sum,0);
+        while(--k){
+            auto [x,i]=pq.top();pq.pop();
+            if(i<n){
+                pq.emplace(x-nums[i],i+1);
+                if(i) pq.emplace(x+nums[i-1]-nums[i],i+1);
+            }
+        }
