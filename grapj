@@ -1,24 +1,40 @@
-///拓扑排序
-class Solution {
-private:
-    vector<vector<int>> edges;
-    vector<int> visited;
-    bool valid = true;
-
-public:
-    void dfs(int u) {
-        visited[u] = 1;
-        for (int v: edges[u]) {
-            if (visited[v] == 0) {
-                dfs(v);
-                if (!valid) {
-                    return;
+    //拓扑排序 例题：课程表
+    //返回拓扑数组，如果成环，返回空序列
+    vector<vector<int>> edge;
+    vector<int> vis,res;
+    bool flag=true;
+    void dfs(int u){
+        vis[u]=1;
+        for(int i=0;i<edge[u].size();i++){
+            if(!vis[edge[u][i]]){
+                dfs(edge[u][i]);
+                if(!flag){
+                    return ;
                 }
             }
-            else if (visited[v] == 1) {
-                valid = false;
-                return;
+            else if(vis[edge[u][i]]==1){
+                flag=false;
+                return ;
             }
         }
-        visited[u] = 2;
+        vis[u]=2;
+        res.push_back(u);
+    }
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        flag=true;
+        res.clear();
+        edge.clear();
+        edge.resize(numCourses);
+        vis.clear();
+        vis.resize(numCourses,0);
+        for(const auto &info:prerequisites){
+            edge[info[1]].push_back(info[0]);
+        }
+        for(int i=1;i<numCourses&&flag;i++){
+            if(!vis[i]){
+                dfs(i);
+            }
+        }
+        if(!flag) return {};
+        return res;
     }
