@@ -1,3 +1,6 @@
 字符串：
 sentence[start:end].startswith(searchWord):
 startwith函数
+
+Counter函数，返回对数组或字符串计数
+可以直接Counter(a)==Counter(b)
