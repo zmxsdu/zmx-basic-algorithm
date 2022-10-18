@@ -7,8 +7,13 @@ bitset<1000> a[1010];
 
 set
 对set的访问
-		for(set<long long>::iterator it = s.begin(); it!=s.end();it++){
-            res.push_back((*it));
-		}
+for(set<long long>::iterator it = s.begin(); it!=s.end();it++){
+         res.push_back((*it));
+}
     查找
     s.find(x)==s.end()
+    
+//构造函数
+function<int(int, int)> dfs = [&](int x, int fa)
+
+function<返回类型（参数1类型，参数2类型）> 函数名 = [&](参数一，参数二)
