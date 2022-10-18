@@ -1,16 +1,17 @@
+一.对priority_queue< pair<int,int> > pq; 的排序
+
 leetcode 373 查找和最小的 K 对数字
 https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/
-对priority_queue< pair<int,int> > pq; 的排序
         auto cmp = [&nums1, &nums2](const pair<int, int> & a, const pair<int, int> & b) {
             return nums1[a.first] + nums2[a.second] > nums1[b.first] + nums2[b.second];  //最小的在顶部，换成“<”后最大的在顶部
         };
-后续写做
-priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
+后续写做  priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
 
 
+二.利用结构体排序
 https://leetcode-cn.com/problems/k-highest-ranked-items-within-a-price-range/submissions/
 2146. 价格范围内最高排名的 K 样物品
-利用结构体排序
+
     struct node{
         int dis,row,column,price;
         bool operator < (node &b) {
@@ -40,11 +41,11 @@ https://leetcode-cn.com/problems/all-oone-data-structure/
             return a.cnt < b.cnt;
         }
     }st;
-    
+ 三.对set <pii> 二分
     leetcode 2213. 由单个字符重复的最长子字符串  
     单点修改整合新区间
     https://leetcode-cn.com/problems/longest-substring-of-one-repeating-character/
-    对set <pii> 二分
+
     //ms记录长度，sp记录区间起始点
     multiset<int> ms,set<pair<int, int>> sp;
     //寻找首元素小于等于p的最大元素
