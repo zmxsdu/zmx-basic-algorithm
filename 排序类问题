@@ -54,3 +54,5 @@ https://leetcode-cn.com/problems/all-oone-data-structure/
     //删除单一长度
      ms.erase(ms.find(pr.second-pr.first+1));
      如果不find一下，会删除全部同样大小的元素
+四.数组二分查找元素
+int pos = upper_bound(nums.begin(), nums.end(), maxValue) - nums.begin() - 1; //返回元素所在数组位置
