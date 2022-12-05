@@ -38,3 +38,18 @@
         if(!flag) return {};
         return res;
     }
+二分图：
+        def is_bipartite(x: int, c: int) -> bool:  # 二分图判定，原理见视频讲解
+            nodes.append(x)
+            color[x] = c
+            for y in g[x]:
+                if color[y] == c or color[y] == 0 and not is_bipartite(y, -c):
+                    return False
+            return True
+
+        ans = 0
+        for i, c in enumerate(color):
+            if c: continue
+            nodes = []
+            if not is_bipartite(i, 1): return -1  # 如果不是二分图（有奇环），则无法分组
+        return ans
