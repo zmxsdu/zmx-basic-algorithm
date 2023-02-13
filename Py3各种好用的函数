@@ -7,3 +7,6 @@ Counter函数，返回对数组或字符串计数
 
 n行k+1列的dp二维数组
 dp = [[0.0] * (k+1) for _ in range(n)]
+
+以a为底的b次方，关于MOD求mod
+pow(a, b, MOD) 
