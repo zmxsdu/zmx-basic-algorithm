@@ -10,3 +10,6 @@ dp = [[0.0] * (k+1) for _ in range(n)]
 
 以a为底的b次方，关于MOD求mod
 pow(a, b, MOD) 
+
+哈希表
+hashtable = dict()
