@@ -13,3 +13,8 @@ pow(a, b, MOD)
 
 哈希表
 hashtable = dict()
+
+reduce函数
+
+reduce(gcd, nums)  对数组nums所有元素求gcd , 期中参数1 gcd可以自定义，如：
+def add(x, y): return x + y
