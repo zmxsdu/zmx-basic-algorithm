@@ -12,3 +12,29 @@ leetcode 913题 猫和老鼠
 必和：1.步数超过一定限度。（如何界定一定限度？）（这种方式难以自结果向初始）
 
 所以任一方的基本策略：转向该角色的必胜或者向未知处拖延时间
+
+状态压缩+dp ：均分k个子集 LC698
+class Solution {
+public:
+    bool canPartitionKSubsets(vector<int>& nums, int k) {
+        int n=nums.size();
+        bool dp[1<<n];memset(dp,0,sizeof(dp));
+        int ssum=accumulate(nums.begin(),nums.end(),0);
+        int per=ssum/k;
+        if(ssum%k!=0) return false;
+        int cursum[1<<n];memset(cursum,0,sizeof(cursum));
+        dp[0]=true;
+        for(int i=0;i<(1<<n);i++){
+            if(!dp[i]) continue;
+            for(int j=0;j<n;j++){
+                if(cursum[i]+nums[j]>per) continue;
+                if(((i>>j)&1)==0){
+                    int nxt=i|(1<<j);
+                    cursum[nxt] = (cursum[i]+nums[j])%per;
+                    dp[nxt]=true;
+                }
+            }
+        }
+        return dp[(1<<n)-1];
+    }
+};
