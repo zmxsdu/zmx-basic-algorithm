@@ -55,3 +55,7 @@ for (int i = 1; i < N; i ++ )
 }
 //组合数
 c(n,m)=fact[n]*infact[n-m]*infact[m]
+
+复制数组
+int great[4000][4001];
+ memcpy(great[k], great[k + 1], sizeof(great[k + 1]));
