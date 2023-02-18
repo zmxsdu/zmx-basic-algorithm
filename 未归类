@@ -59,3 +59,6 @@ c(n,m)=fact[n]*infact[n-m]*infact[m]
 复制数组
 int great[4000][4001];
  memcpy(great[k], great[k + 1], sizeof(great[k + 1]));
+
+//取power中最小数
+*min_element(power, power + n) 
