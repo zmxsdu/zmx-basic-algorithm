@@ -33,3 +33,7 @@ def add(x, y): return x + y
  //转二进制
  z = bin(c)[2:]
  
+ 
+ //字典的操作
+ d = {}
+ d[x] = d.get(x,0) + y #d.get(x,0) 如果键x存在，返回d[x]，否则返回0
