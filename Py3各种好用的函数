@@ -2,27 +2,34 @@
 sentence[start:end].startswith(searchWord):
 startwith函数
 
+字符替换
+s.replace(c, '9')
+把s中的c换成'9'
+如果不添加 s  = s.replace(c, '9')
+则s不会改变
+
 Counter函数，返回对数组或字符串计数
 可以直接Counter(a)==Counter(b)
 
 n行k+1列的dp二维数组
 dp = [[0.0] * (k+1) for _ in range(n)]
 
-以a为底的b次方，关于MOD求mod
+//以a为底的b次方，关于MOD求mod
 pow(a, b, MOD) 
 
-哈希表
+//哈希表
 hashtable = dict()
 
-reduce函数
+//reduce函数
 
 reduce(gcd, nums)  对数组nums所有元素求gcd , 期中参数1 gcd可以自定义，如：
 def add(x, y): return x + y
 
-前缀和
+//前缀和
  m, n = len(grid), len(grid[0])
  rs = [list(accumulate(row, initial=0)) for row in grid]  # 每行的前缀和
  cs = [list(accumulate(col, initial=0)) for col in zip(*grid)]  # 每列的前缀和
  
- 转二进制
+ //转二进制
  z = bin(c)[2:]
+ 
