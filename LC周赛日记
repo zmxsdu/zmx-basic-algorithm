@@ -14,5 +14,9 @@
 
 需要复习：
 CF 1796D（并没看懂t的三种状态是怎么对应的区段）
-
+	习得：
+        ios::sync_with_stdio(false); cin.tie(0); //使得cin和scanf输入一样快
+        using li =long long;
+        const li INF = 1e18;
+        
 1789D（良好状态下独立做出来了，但是时间过长，2H）
