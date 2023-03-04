@@ -4,3 +4,5 @@ i&(i-1) == 0
 i=~i return  i&(-i)
 //获得i的最低位
 i=（~i+1）&i
+//跳过&不为0
+ x = x ^ 0xffff;sub=x;sub = (sub - 1) & x；
