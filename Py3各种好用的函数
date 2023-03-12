@@ -20,9 +20,10 @@ pow(a, b, MOD)
 //哈希表
 hashtable = dict()
 
+//list(accumulate(nums))可以返回前i项和的列表
 //reduce函数
 
-reduce(gcd, nums)  对数组nums所有元素求gcd , 期中参数1 gcd可以自定义，如：
+reduce(gcd, nums)  对数组nums所有元素求gcd , 其中参数1 gcd可以自定义，如：
 def add(x, y): return x + y
 
 //前缀和
