@@ -8,10 +8,14 @@ s.replace(c, '9')
 如果不添加 s  = s.replace(c, '9')
 则s不会改变
 
-Counter函数，返回对数组或字符串计数
+//函数sum
+return sum(s > 0 for s in accumulate(nums))  秒选符合条件的个数 
+
+
+//Counter函数，返回对数组或字符串计数
 可以直接Counter(a)==Counter(b)
 
-n行k+1列的dp二维数组
+//n行k+1列的dp二维数组
 dp = [[0.0] * (k+1) for _ in range(n)]
 
 //以a为底的b次方，关于MOD求mod
