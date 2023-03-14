@@ -8,7 +8,7 @@ int main(){
 	for(int i=2;i<_;i++){
 		if(nonpri[i]) continue;
 		pri[cnt++]=i;
-		for(int j=i;j<_;j+=i){
+		for(int j=2*i;j<_;j+=i){
 			nonpri[j]=1;
 		}
 	}
