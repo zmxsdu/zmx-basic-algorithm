@@ -1,29 +1,14 @@
-#include<bits/stdc++.h>
-using namespace std;
+//线性筛
 const int _=2e6+7;
 int pri[_/10];
 bool nonpri[_];
 long long cnt=0,num[_];
-int main(){
+void ini(){
 	for(int i=2;i<_;i++){
 		if(nonpri[i]) continue;
 		pri[cnt++]=i;
-		for(int j=2*i;j<_;j+=i){
+		for(int j=i*i;j<_;j+=i){
 			nonpri[j]=1;
-		}
-	}
-	int n;
-	scanf("%d",&n);
-	int v;
-	map<int,bool> mp;
-	for(int i=0;i<n;i++){
-		cin >> v;
-		num[v]++;
-		mp[v]=1;
-	}
-	for(int i=0;i<cnt;i++){
-		for(int j=2e6/pri[i];j>0;j--){
-			num[j]+=num[j*pri[i]];
 		}
 	}
 } 
