@@ -62,3 +62,16 @@ int great[4000][4001];
 
 //取power中最小数
 *min_element(power, power + n) 
+
+//放在class前会先默认执行，并作为全局变量
+int ini =[](){
+    pri[0]=0;
+	for(int i=2;i<_;i++){
+		if(nonpri[i]) continue;
+		pri[cnt++]=i;
+		for(int j=i*i;j<_;j+=i){
+			nonpri[j]=1;
+		}
+	}
+    return 0;
+}();
