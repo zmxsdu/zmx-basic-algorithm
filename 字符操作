@@ -41,3 +41,5 @@ vector<int> prefix_function(string s) {
   }
   return pi;
 }
+//最长公共子序列并求出这个子序列,lc1092
+借助b[n][m]来标记
