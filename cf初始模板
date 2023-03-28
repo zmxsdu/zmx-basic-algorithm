@@ -2,7 +2,7 @@
 using namespace std;
 #define all(x) (x).begin(),(x).end()
 using li = long long;
-using pll = pair<li,li>
+using pll = pair<li,li>;
 const li INF =1e18;
 void solve(){
 
