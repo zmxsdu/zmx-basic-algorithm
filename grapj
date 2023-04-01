@@ -1,4 +1,19 @@
-    //拓扑排序 例题：课程表
+//堆优化的DIJ LC 1786
+        priority_queue<pair<int,int>> pq;
+        pq.push({0,n});
+        dis[n]=0;
+        while(!pq.empty()){
+            auto [d,x]=pq.top(); pq.pop();
+            d=-d;
+            if(d!=dis[x]) continue;
+            for(auto [y,w]:g[x]){
+                if(dis[y]>d+w){
+                    dis[y]=d+w;
+                    pq.push({-dis[y],y});
+                }
+            }
+        }
+//拓扑排序 例题：课程表
     //返回拓扑数组，如果成环，返回空序列
     vector<vector<int>> edge;
     vector<int> vis,res;
@@ -53,3 +68,4 @@
             nodes = []
             if not is_bipartite(i, 1): return -1  # 如果不是二分图（有奇环），则无法分组
         return ans
+//最小环 dij去边法
