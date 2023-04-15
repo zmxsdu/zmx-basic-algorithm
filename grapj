@@ -69,3 +69,11 @@
             if not is_bipartite(i, 1): return -1  # 如果不是二分图（有奇环），则无法分组
         return ans
 //最小环 dij去边法
+// floyd  ,先枚举中介点，再枚举起点和目的地
+for (k = 1; k <= n; k++) {
+  for (x = 1; x <= n; x++) {
+    for (y = 1; y <= n; y++) {
+      f[x][y] = min(f[x][y], f[x][k] + f[k][y]);
+    }
+  }
+}
