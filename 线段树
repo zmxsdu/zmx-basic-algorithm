@@ -81,3 +81,18 @@ class Solution:
             elif op == 2: s += l * cnt1[1]
             else: ans.append(s)
         return ans
+//LC  315单点更新+求和
+#define lowbit(a) ((a)&-(a))
+//注意数组从1开始，而非0
+int c[40010];
+//对x处增加增加y值，总和
+void update(int x,int y,int n){
+    for(int i=x;i<=n;i+=lowbit(i))
+        c[i] += y;
+}
+int getsum(int x){
+    int ans = 0;
+    for(int i=x;i;i-=lowbit(i))
+        ans += c[i];
+    return ans;
+}
