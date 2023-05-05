@@ -48,3 +48,7 @@ def add(x, y): return x + y
 初始化：h = [(0,0,0)]
 取出 ：d , i , j = heappop(h)
 取入：heappush(h,(d+1,x,y))
+
+// [::1] 反转字符串 LC1419
+PREVIOUS = dict(pairwise("croakc"[::-1])) 会返回上一个字母，如:PREVIOUS['o'] = 'r'
+pairwise 相邻字符成对 如pairwise("abcdef")会返回 ab bc cd
