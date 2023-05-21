@@ -1,12 +1,25 @@
-//大小写
-s[i]=tolower(s[i));
-s[i]=toupper(s[i]);
-//是否为字母
-isalpha(s[i]);
-//
-stoi(s.substr(pos,len));
-pos起始位置，len长度
-不加len代表一直到字符串末尾
+//stirng 函数库
+
+   //大小写
+   s[i]=tolower(s[i));
+   s[i]=toupper(s[i]);
+   //是否为字母
+   isalpha(s[i]);
+   //字符串转int
+   stoi(s.substr(pos,len));
+   //int转string
+   to_string
+   pos起始位置，len长度
+   不加len代表一直到字符串末尾
+   //erase字符串用法
+            int pos=t.find("AB")
+            if(pos!=-1){
+                t.erase(t.begin()+pos,t.begin()+pos+2);
+                flag=true;
+            }
+
+
+
 //LC 899
 同构字符串的最小字典序存在O（n）求法，叫最小表示法
 
