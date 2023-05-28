@@ -13,6 +13,27 @@
                 }
             }
         }
+//并查集
+    int fa[100010];
+    int find(int x){
+        int z=x;
+        while(x!=fa[x]){
+            x = fa[x];
+        }
+        while(z!=x){
+            int t=fa[z];
+            fa[z] = x;
+            z = t;
+        }
+        return x;
+    }
+    void Union(int a,int b){
+        int faa=find(a);
+        int fab=find(b);
+        if(faa<fab) fa[fab] = faa;
+        else fa[faa] = fab;
+    }
+    for(int i=0;i<=1e5;i++) fa[i] = i;
 //拓扑排序 例题：课程表
     //返回拓扑数组，如果成环，返回空序列
     vector<vector<int>> edge;
