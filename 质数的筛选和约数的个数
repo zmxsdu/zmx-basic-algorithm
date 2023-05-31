@@ -1,17 +1,18 @@
 //线性筛
-const int _=2e6+7;
-int pri[_/10];
-bool nonpri[_];
-long long cnt=0,num[_];
-void ini(){
-	for(int i=2;i<_;i++){
+const int N=1e5+7;
+int pri[N/5];
+bool nonpri[N];
+long long cnt=0,num[N];
+int init = [](){
+    for(int i=2;i<N;i++){
 		if(nonpri[i]) continue;
 		pri[cnt++]=i;
-		for(int j=i*i;j<_;j+=i){
+		for(long long j=1ll*i*i;j<1ll*N;j+=i){
 			nonpri[j]=1;
 		}
 	}
-} 
+    return 0;
+}();
 
 
 Python
