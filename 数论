@@ -1,0 +1,71 @@
+//线性筛
+const int N=1e5+7;
+int pri[N/5];
+bool nonpri[N];
+long long cnt=0,num[N];
+int init = [](){
+    for(int i=2;i<N;i++){
+		if(nonpri[i]) continue;
+		pri[cnt++]=i;
+		for(long long j=1ll*i*i;j<1ll*N;j+=i){
+			nonpri[j]=1;
+		}
+	}
+    return 0;
+}();
+
+//
+const int MOD = 1e9 + 7, MX = 1e4 + 1, MX_K = 13; // 至多 13 个质因数
+vector<int> ks[MX]; // ks[x] 为 x 分解质因数后，每个质因数的个数列表
+int c[MX + MX_K][MX_K + 1]; // 组合数
+
+
+Python
+MX = 1000
+P = [0]  # 哨兵，避免二分越界
+is_prime = [True] * MX
+for i in range(2, MX):
+    if is_prime[i]:
+        P.append(i)  # 预处理质数列表
+        for j in range(i * i, MX, i):
+            is_prime[j] = False
+
+//质数筛选及组合数
+const int MOD = 1e9 + 7, MX = 1e4 + 1, MX_K = 13; // 至多 13 个质因数
+vector<int> ks[MX]; // ks[x] 为 x 分解质因数后，每个质因数的个数列表
+int c[MX + MX_K][MX_K + 1]; // 组合数
+
+int init = []() {
+    for (int i = 2; i < MX; ++i) {
+        int x = i;
+        for (int p = 2; p * p <= x; ++p) {
+            if (x % p == 0) {
+                int k = 1;
+                for (x /= p; x % p == 0; x /= p) ++k;
+                ks[i].push_back(k);
+            }
+        }
+        if (x > 1) ks[i].push_back(1);
+    }
+
+    c[0][0] = 1;
+    for (int i = 1; i < MX + MX_K; ++i) {
+        c[i][0] = 1;
+        for (int j = 1; j <= min(i, MX_K); ++j)
+            c[i][j] = (c[i - 1][j] + c[i - 1][j - 1]) % MOD;
+    }
+    return 0;
+}();
+
+class Solution {
+public:
+    int idealArrays(int n, int maxValue) {
+        long ans = 0L;
+        for (int x = 1; x <= maxValue; ++x) {
+            long mul = 1L;
+            for (int k: ks[x]) mul = mul * c[n + k - 1][k] % MOD;
+            ans += mul;
+        }
+        return ans % MOD;
+    }
+};
