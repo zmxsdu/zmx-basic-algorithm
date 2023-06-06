@@ -18,44 +18,6 @@ function<int(int, int)> dfs = [&](int x, int fa)
 
 function<返回类型（参数1类型，参数2类型）> 函数名 = [&](参数一，参数二)
 
-//快速幂
-  const int mod = 1e9 + 7;
-  long long fpow(long long a, long long b) {
-    long long ans = 1;
-    while (b) {//循环终止条件
-      if (b & 1) ans = ((ans % mod) * (a % mod)) % mod;//指数为奇数
-      b >>= 1;
-      a = (a % mod) * (a % mod);
-    }
-    return ans % mod;
-  }
- //快速幂2
- int qmi(int a, int k, int p) //快速幂模板
-{
-	int res = 1;
-	while (k)
-	{
-		if (k & 1) res = (long long)res * a % p;
-		a = (long long)a * a % p;
-		k >>= 1;
-	}
-	return res % p;
-}
-//数组求逆元
-long long fact[N];
-long long infact[N];
-void ini(){
-	// fact为阶乘 infact为阶乘的逆元
-    fact[0] = infact[0] = 1;
-for (int i = 1; i < N; i ++ )
-{
-    fact[i] = 1ll*fact[i - 1] * i % mod;
-    infact[i] = 1ll*infact[i - 1] * qmi(i, mod - 2, mod) % mod;
-}
-}
-//组合数
-c(n,m)=fact[n]*infact[n-m]*infact[m]
-
 复制数组
 int great[4000][4001];
  memcpy(great[k], great[k + 1], sizeof(great[k + 1]));
