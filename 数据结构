@@ -1,5 +1,5 @@
 //ST表  
-Problem : LC6473
+Problem : LC周赛349 T4
 st[i][j]代表区间[i,i+(1<<j))的最值  
 void getLog()
     {
