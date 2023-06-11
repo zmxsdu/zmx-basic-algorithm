@@ -1,4 +1,4 @@
-//ST表  
+//ST表  nlogn的预处理，O（1）求区间最值，
 Problem : LC周赛349 T4
 st[i][j]代表区间[i,i+(1<<j))的最值  
 void getLog()
@@ -24,3 +24,17 @@ void getLog()
   for(int j=1;(1<<j)<=n;j++)
      for(int i=0;i+(1<<(j-1))<n;i++)
       st[i][j] = max(st[i][j-1],st[i+(1<<(j-1))][j-1]);
+//树状数组
+#define lowbit(a) ((a)&-(a))
+li c[N];  //c[N]
+void update(int x,int y,int n){
+    for(int i=x;i<=n;i+=lowbit(i))
+        c[i] += y;
+}
+int getsum(int x){
+    int ans = 0;
+    for(int i=x;i;i-=lowbit(i))
+        ans += c[i];
+    return ans;
+}
+
