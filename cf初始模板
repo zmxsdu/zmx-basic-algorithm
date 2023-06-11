@@ -4,6 +4,15 @@ using namespace std;
 using li = long long;
 using pll = pair<li,li>;
 const li INF =1e18;
+void getLog()
+    {
+        Log[1] = 0;
+        for(int i=2;i<=100001;i++)
+            Log[i] = Log[i/2]+1;
+    }
+int init = [](){
+    return 0;
+}();
 void solve(){
 
 
