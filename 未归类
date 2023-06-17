@@ -4,6 +4,8 @@ __builtin_popcount()
 bitset<1000> a[1010];
 1010行1000列的位图
 
+vector<pair<int,int>> p{50010,{0,0}};  //格式
+
 
 set
 对set的访问
