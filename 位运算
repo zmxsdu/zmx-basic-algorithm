@@ -8,5 +8,10 @@ i=（~i+1）&i
  x = x ^ 0xffff;sub=x;sub = (sub - 1) & x；
  //二进制全1去掉一位
  mask = -1 & ((1 << 26) - 1) ^ (1 << i)
-
 https://leetcode.cn/circle/discuss/CaOJ45/
+
+Gosper's Hack算法枚举位中恰有k个，
+lb = x&(-x)
+left = x + lb
+right = (x^(x+lb))/lb>>2
+x =left | right
