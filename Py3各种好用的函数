@@ -2,6 +2,8 @@
 sentence[start:end].startswith(searchWord):
 startwith函数
 
+int(word[0:]) 字符串转数字（无视int范围）
+word[0:].isdigit() 字符串是否为纯数字
 字符替换
 s.replace(c, '9')
 把s中的c换成'9'
