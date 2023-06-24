@@ -1,3 +1,8 @@
+//获取二进制中1的个数
+c++:__builtin_popcount(i)
+py:i.bit_count()
+
+
 //检验i是否是2的幂
 i&(i-1) == 0
 //获得i更高的2的幂
